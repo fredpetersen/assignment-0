@@ -31,4 +31,14 @@ public class CalendarTest
 
         result.Should().Be(false);
     }
+
+    [Fact]
+    public void IsLeapYear_given_2000_returns_true()
+    {
+        var sut = new Calendar();
+
+        var result = sut.IsLeapYear(2000);
+
+        result.Should().Be(true);
+    }
 }

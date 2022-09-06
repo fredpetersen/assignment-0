@@ -41,4 +41,14 @@ public class CalendarTest
 
         result.Should().Be(true);
     }
+
+    [Fact]
+    public void IsLeapYear_given_1520_throws_argument_exception()
+    {
+        var sut = new Calendar();
+
+        var result = sut.IsLeapYear(1520);
+
+        result.Should().Be(false);
+    }
 }

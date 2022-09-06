@@ -42,4 +42,16 @@ public class TestProjectTest
         var output = writer.GetStringBuilder().ToString().TrimEnd();
         output.Should().Be("yay");
     }
+
+    [Fact]
+    public void LeapYearPrompterAndMessager_when_given_non_year_string_throws_ArgumentException()
+    {
+        var yearRetriever = new TestYearRetriever("non-year value");
+        var sut = new LeapYearPrompterAndMessager(yearRetriever);
+
+        var action = () => sut.run();
+
+        action.Should().Throw<ArgumentException>()
+        .WithMessage("Year could not be parsed to int");
+    }
 }

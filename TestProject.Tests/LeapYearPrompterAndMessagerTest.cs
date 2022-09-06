@@ -51,6 +51,7 @@ public class TestProjectTest
 
         var action = () => sut.run();
 
-        action.Should().Throw<ArgumentException>().WithParameterName("year").WithMessage("String could not be parsed to int");
+        action.Should().Throw<ArgumentException>()
+        .WithMessage("Year could not be parsed to int");
     }
 }

@@ -47,8 +47,8 @@ public class CalendarTest
     {
         var sut = new Calendar();
 
-        var action = () => sut.IsLeapYear(1520);
+        var result = sut.IsLeapYear(1520);
 
-        action.Should().Throw<ArgumentOutOfRangeException>();
+        result.Should().Be(false);
     }
 }
